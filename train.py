@@ -229,7 +229,7 @@ for epoch in range(1, epochs+1):
             "classes": classes,
             "norm_mean": [0.5,0.5,0.5],
             "norm_std":  [0.5,0.5,0.5],
-            "arch": "tinycnn_v2_triangle_f1",
+            "arch": "cnn_v2_triangle_f1",
             "best_triangle_f1": float(best_f1),
         }, f"models/tri_vs_not_{ts}.pt")
 
