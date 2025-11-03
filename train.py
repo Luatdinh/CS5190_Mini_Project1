@@ -97,7 +97,7 @@ def count_targets(ds):
 print("Train counts:", {classes[i]: c for i,c in count_targets(train_ds).items()})
 print("Val counts:",   {classes[i]: c for i,c in count_targets(val_ds).items()})
 
-class TinyCNNv2(nn.Module):
+class CNNv2(nn.Module):
     def __init__(self, k):
         super().__init__()
         self.f = nn.Sequential(
@@ -111,7 +111,7 @@ class TinyCNNv2(nn.Module):
     def forward(self, x):
         return self.fc(self.f(x).view(x.size(0), -1))
 
-model = TinyCNNv2(num_classes).to(device)
+model = CNNv2(num_classes).to(device)
 
 with torch.no_grad():
     tr_counts = count_targets(train_ds)
